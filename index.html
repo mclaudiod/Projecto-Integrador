@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Conf Bs As</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="./img/codoacodo.png"/>
     <link href="./bootstrap.css" rel="stylesheet" crossorigin="anonymous">
     <link href="./main.css" rel="stylesheet" crossorigin="anonymous">
 </head>
@@ -35,7 +36,7 @@
                             <a class="nav-link" href="#convertirse">Conviértete en orador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success buy" href="" data-toggle="modal" data-target="#exampleModalCenter">Comprar tickets</a>
+                            <a class="nav-link text-success" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar tickets</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +49,7 @@
                 <p class="fs-5">Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. ¡Te esperamos!</p>
                 <div class="d-flex justify-content-end column-gap-3">
                     <a role="button" class="btn btn-outline-light" href="#convertirse">Quiero ser orador</a>
-                    <a role="button" class="btn btn-success buy" href="">Comprar tickets</a>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar tickets</button>
                 </div>
             </div>
 
@@ -65,23 +66,41 @@
             </div>
         </div>
     </header>
-
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar Tickets</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+
+                <form class="d-flex flex-column">
+                    <div class="modal-body pb-0">
+                        <div class="d-flex justify-content-between column-gap-4 mb-3 mb-md-0 flex-column flex-md-row">
+                            <div class="flex-grow-1 mb-3">
+                                <label type="hidden" for="name" class="form-label d-none"></label>
+                                <input type="text" class="form-control" id="name" placeholder="Nombre">
+                            </div>
+                        
+                            <div class="flex-grow-1">
+                                <label type="hidden" for="surname" class="form-label d-none"></label>
+                                <input type="text" class="form-control" id="surname" placeholder="Apellido">
+                            </div>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label type="hidden" for="textarea" class="form-label d-none"></label>
+                            <textarea class="form-control fs-5" id="textarea" rows="3" aria-describedby="textHelp" placeholder="¿Sobre qué quieres hablar?"></textarea>
+                            <div id="textHelp" class="form-text">Recuerda incluir un título para tu charla</div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Generar Boleta</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
