@@ -77,69 +77,80 @@
 
                 <form class="d-flex flex-column">
                     <div class="modal-body pb-0">
-                        <div class="card-group mb-3">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Estudiantes</h5>
-                                    <p class="card-text">Tienen un descuento de</p>
-                                    <p class="card-text fw-bold">80%</p>
-                                    <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                        <div class="row mb-3">
+                            <div class="col-lg-4 mb-3 mb--0">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Estudiantes</h5>
+                                        <p class="card-text">Tienen un descuento de</p>
+                                        <p class="card-text fw-bold">80%</p>
+                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Trainees</h5>
-                                    <p class="card-text">Tienen un descuento de</p>
-                                    <p class="card-text fw-bold">50%</p>
-                                    <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                            
+                            <div class="col-lg-4 mb-3 mb--0">
+                                <div class="card h-100 border-success">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Trainees</h5>
+                                        <p class="card-text">Tienen un descuento de</p>
+                                        <p class="card-text fw-bold">50%</p>
+                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Juniors</h5>
-                                    <p class="card-text">Tienen un descuento de</p>
-                                    <p class="card-text fw-bold">15%</p>
-                                    <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                            
+                            <div class="col-lg-4 mb-3 mb--0">
+                                <div class="card h-100 border-warning">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Juniors</h5>
+                                        <p class="card-text">Tienen un descuento de</p>
+                                        <p class="card-text fw-bold">15%</p>
+                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="d-flex justify-content-between column-gap-4 mb-3 mb-md-0 flex-column flex-md-row">
-                            <div class="flex-grow-1 mb-3">
+                        <div class="row">
+                            <div class="col-lg-6 mb-3">
                                 <label type="hidden" for="name-ticket" class="form-label d-none"></label>
                                 <input type="text" class="form-control" id="name-ticket" placeholder="Nombre">
                             </div>
                         
-                            <div class="flex-grow-1">
+                            <div class="col-lg-6 mb-3">
                                 <label type="hidden" for="surname-ticket" class="form-label d-none"></label>
                                 <input type="text" class="form-control" id="surname-ticket" placeholder="Apellido">
                             </div>
                         </div>
         
-                        <div class="flex-grow-1 mb-3">
+                        <div class="mb-3">
                             <label type="hidden" for="email-ticket" class="form-label d-none"></label>
                             <input type="text" class="form-control" id="email-ticket" placeholder="Correo Electrónico">
                         </div>
 
-                        <div class="d-flex justify-content-between column-gap-4 mb-3 mb-md-0 flex-column flex-md-row">
-                            <div class="flex-grow-1 mb-3">
+                        <div class="row">
+                            <div class="col-lg-6 mb-3">
                                 <label for="quantity-ticket" class="form-label">Cantidad</label>
                                 <input type="number" class="form-control" id="quantity-ticket" value="1">
                             </div>
                         
-                            <div class="flex-grow-1">
+                            <div class="col-lg-6 mb-3">
                                 <label for="category-ticket" class="form-label">Categoría</label>
-                                <select class="form-control form-select" id="category-ticket">
+                                <select class="form-select" id="category-ticket">
                                     <option value="general">General</option>
-                                    <option value="student">Estudiante</option>
-                                    <option value="trainee">Trainee</option>
-                                    <option value="junior">Junior</option>
+                                    <option value="students">Estudiantes</option>
+                                    <option value="trainees">Trainees</option>
+                                    <option value="juniors">Juniors</option>
                                 </select>
                             </div>
                         </div>
-                        
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Total:</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" disabled>
+                            <span class="input-group-text">$</span>
+                        </div>
                     </div>
 
                     <div class="modal-footer">
@@ -214,7 +225,7 @@
     </section>
 
     <section id="convertirse">
-        <div class="container d-grid gap-2 col-12 col-xl-6 mx-auto my-4">
+        <div class="container col-xxl-6 col-xl-8 col-lg-10 col-12 mx-auto my-4">
             <div class="text-center">
                 <p class="text-uppercase mb-0 text-secondary">Conviértete en un</p>
                 <h2 class="text-uppercase mt-0 fw-semibold">Orador</h2>
@@ -222,13 +233,13 @@
             </div>
 
             <form class="d-flex flex-column">
-                <div class="d-flex justify-content-between column-gap-4 mb-3 mb-md-0 flex-column flex-md-row">
-                    <div class="flex-grow-1 mb-3">
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
                         <label type="hidden" for="name" class="form-label d-none"></label>
                         <input type="text" class="form-control" id="name" placeholder="Nombre">
                     </div>
                 
-                    <div class="flex-grow-1">
+                    <div class="col-lg-6 mb-3">
                         <label type="hidden" for="surname" class="form-label d-none"></label>
                         <input type="text" class="form-control" id="surname" placeholder="Apellido">
                     </div>
