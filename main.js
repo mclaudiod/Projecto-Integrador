@@ -4,6 +4,7 @@ const surnameTicket = document.querySelector("#surname-ticket");
 const emailTicket = document.querySelector("#email-ticket");
 const quantityTicket = document.querySelector("#quantity-ticket");
 const categoryTicket = document.querySelector("#category-ticket");
+const ticketInputs = [nameTicket, surnameTicket, emailTicket, quantityTicket];
 const totalSpan = document.querySelector("#total-ticket");
 const submitTicket = document.querySelector("#submitTicket");
 let alphabeticCheck = /^[a-zA-ZÀ-ÿ\s]{3,21}$/;
@@ -13,36 +14,14 @@ let ticket = 200;
 
 window.addEventListener("load", cleanTicketForm);
 
-nameTicket.addEventListener("keyup", function() {
-    validateInput(nameTicket, "alphabetic");
-});
+ticketInputs.forEach((ticketInput) => {
+    ticketInput.addEventListener("keyup", function() {
+        validateInput(ticketInput);
+    });
 
-nameTicket.addEventListener("blur", function() {
-    validateInput(nameTicket, "alphabetic");
-});
-
-surnameTicket.addEventListener("keyup", function() {
-    validateInput(surnameTicket, "alphabetic");
-});
-
-surnameTicket.addEventListener("blur", function() {
-    validateInput(surnameTicket, "alphabetic");
-});
-
-emailTicket.addEventListener("keyup", function() {
-    validateInput(emailTicket, "email");
-});
-
-emailTicket.addEventListener("blur", function() {
-    validateInput(emailTicket, "email");
-});
-
-quantityTicket.addEventListener("keyup", function() {
-    validateInput(quantityTicket, "number");
-});
-
-quantityTicket.addEventListener("change", function() {
-    validateInput(quantityTicket, "number");
+    ticketInput.addEventListener("blur", function() {
+        validateInput(ticketInput);
+    });
 });
 
 categoryTicket.addEventListener("change", totalToPay);
@@ -69,9 +48,10 @@ function totalToPay() {
     };
 };
 
-function validateInput(input, type) {
-    switch(type) {
-        case "alphabetic":
+function validateInput(input) {
+    switch(input) {
+        case nameTicket:
+        case surnameTicket:
             if(alphabeticCheck.test(input.value)) {
                 input.classList.add("is-valid");
                 input.classList.remove("is-invalid");
@@ -80,7 +60,7 @@ function validateInput(input, type) {
                 input.classList.remove("is-valid");
             };
             break;
-        case "email":
+        case emailTicket:
             if(emailCheck.test(input.value)) {
                 input.classList.add("is-valid");
                 input.classList.remove("is-invalid");
@@ -89,7 +69,7 @@ function validateInput(input, type) {
                 input.classList.remove("is-valid");
             };
             break;
-        case "number":
+        case quantityTicket:
             if(input.value > 10) {
                 input.value = 10;
                 totalToPay();
@@ -110,10 +90,10 @@ function validateInput(input, type) {
 };
 
 function validateTicketForm() {
-    validateInput(nameTicket, "alphabetic");
-    validateInput(surnameTicket, "alphabetic");
-    validateInput(emailTicket, "email");
-    validateInput(quantityTicket, "number");
+    validateInput(nameTicket);
+    validateInput(surnameTicket);
+    validateInput(emailTicket);
+    validateInput(quantityTicket);
 };
 
 function cleanTicketForm() {
