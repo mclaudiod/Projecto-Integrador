@@ -198,7 +198,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form class="d-flex flex-column">
+                <form class="d-flex flex-column" id="ticketForm">
                     <div class="modal-body pb-0">
                         <h2 class="fw-semibold text-uppercase text-center mb-3">Valor del ticket general $200</h2>
                         <div class="row mb-3">
@@ -239,22 +239,26 @@
                         <div class="row">
                             <div class="col-lg mb-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name-ticket" placeholder="Nombre" required>
+                                    <input type="text" class="form-control" id="name-ticket" placeholder="Nombre" aria-describedby=" validationName" required>
                                     <label for="name-ticket">Nombre</label>
-                                </div>
+                                    <div id="validationName" class="invalid-feedback">Por favor escriba un nombre válido.</div>
+                                
+                                </div>                             
                             </div>
                         
                             <div class="col-lg mb-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="surname-ticket" placeholder="Apellido" required>
+                                    <input type="text" class="form-control" id="surname-ticket" placeholder="Apellido" aria-describedby=" validationSurname" required>
                                     <label for="surname-ticket">Apellido</label>
+                                    <div id="validationSurname" class="invalid-feedback">Por favor escriba un apellido válido.</div>
                                 </div>
                             </div>
                         </div>
         
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="email-ticket" placeholder="Correo Electrónico" required>
+                            <input type="text" class="form-control" id="email-ticket" placeholder="Correo Electrónico" aria-describedby=" validationEmail" required>
                             <label for="email-ticket">Correo Electrónico</label>
+                            <div id="validationEmail" class="invalid-feedback">Por favor escriba una dirección de correo electrónico válida.</div>
                         </div>
 
                         <div class="row">
@@ -286,7 +290,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         <button type="button" class="btn btn-danger" onclick="cleanTicketForm();">Borrar</button>
-                        <button type="submit" class="btn btn-success">Generar Boleta</button>
+                        <button type="submit" id="submitTicket" class="btn btn-success" disabled>Generar Boleta</button>
                     </div>
                 </form>
             </div>
