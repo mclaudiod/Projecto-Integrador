@@ -19,7 +19,7 @@ ticketInputs.forEach((ticketInput) => {
         validateInput(ticketInput);
     });
 
-    ticketInput.addEventListener("blur", function() {
+    ticketInput.addEventListener("change", function() {
         validateInput(ticketInput);
     });
 });
