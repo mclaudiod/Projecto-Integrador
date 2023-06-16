@@ -128,5 +128,6 @@ function cleanTicketForm() {
     emailTicket.classList.remove("is-invalid");
     quantityTicket.value = 1;
     categoryTicket.value = "general";
+    totalToPay();
     submitTicket.disabled = true;
 };
