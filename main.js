@@ -15,11 +15,7 @@ let ticket = 200;
 window.addEventListener("load", cleanTicketForm);
 
 ticketInputs.forEach((ticketInput) => {
-    ticketInput.addEventListener("keyup", function() {
-        validateInput(ticketInput);
-    });
-
-    ticketInput.addEventListener("change", function() {
+    ticketInput.addEventListener("input", function() {
         validateInput(ticketInput);
     });
 });
@@ -82,7 +78,7 @@ function validateInput(input) {
             break;
     };
 
-    if(nameTicket.classList.contains("is-valid") && surnameTicket.classList.contains("is-valid") && emailTicket.classList.contains("is-valid") && !(input.value > 10 || input.value < 1)) {
+    if(nameTicket.classList.contains("is-valid") && surnameTicket.classList.contains("is-valid") && emailTicket.classList.contains("is-valid") && !(quantityTicket.value > 10 || quantityTicket.value < 1)) {
         submitTicket.disabled = false;
     } else {
         submitTicket.disabled = true;
