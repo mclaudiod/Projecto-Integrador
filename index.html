@@ -67,6 +67,113 @@
         </div>
     </header>
 
+    <div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ticketModalLabel">Comprar Tickets</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form class="d-flex flex-column" id="ticketForm">
+                    <div class="modal-body pb-0">
+                        <h2 class="fw-semibold text-uppercase text-center mb-3">Valor del ticket general $200</h2>
+                        <div class="row mb-3">
+                            <div class="col-lg-4 mb-3 mb--0">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Estudiantes</h5>
+                                        <p class="card-text">Tienen un descuento de</p>
+                                        <p class="card-text fw-bold">80%</p>
+                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 mb-3 mb--0">
+                                <div class="card h-100 border-success">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Trainees</h5>
+                                        <p class="card-text">Tienen un descuento de</p>
+                                        <p class="card-text fw-bold">50%</p>
+                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 mb-3 mb--0">
+                                <div class="card h-100 border-warning">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Juniors</h5>
+                                        <p class="card-text">Tienen un descuento de</p>
+                                        <p class="card-text fw-bold">15%</p>
+                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                          
+                        <div class="row">
+                            <div class="col-lg mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control val" id="name-ticket" placeholder="Nombre" aria-describedby=" validationName" required>
+                                    <label for="name-ticket">Nombre</label>
+                                    <div id="validationName" class="invalid-feedback">Por favor escriba un nombre válido.</div>
+                                
+                                </div>                             
+                            </div>
+                        
+                            <div class="col-lg mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control val" id="surname-ticket" placeholder="Apellido" aria-describedby=" validationSurname" required>
+                                    <label for="surname-ticket">Apellido</label>
+                                    <div id="validationSurname" class="invalid-feedback">Por favor escriba un apellido válido.</div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control val" id="email-ticket" placeholder="Correo Electrónico" aria-describedby=" validationEmail" required>
+                            <label for="email-ticket">Correo Electrónico</label>
+                            <div id="validationEmail" class="invalid-feedback">Por favor escriba una dirección de correo electrónico válida.</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg mb-3">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control val" id="quantity-ticket" min="1" max="10" required>
+                                    <label for="quantity-ticket">Cantidad</label>
+                                </div>
+                            </div>
+                        
+                            <div class="col-lg mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select" id="category-ticket" required>
+                                        <option value="general">General</option>
+                                        <option value="students">Estudiantes</option>
+                                        <option value="trainees">Trainees</option>
+                                        <option value="juniors">Juniors</option>
+                                    </select>
+                                    <label for="category-ticket">Categoría</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="border rounded border-primary-subtle bg-primary-subtle p-3">Total a Pagar: $<span id="total-ticket">200</span></p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" onclick="cleanTicketForm();">Borrar</button>
+                        <button type="submit" id="submitTicket" class="btn btn-success" disabled>Generar Boleta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <main id="oradores">
         <div class="container mt-4">
             <div class="text-uppercase text-center">
@@ -183,119 +290,12 @@
                         <a class="nav-link" href="#privacidad">Privacidad</a>
                     </li>
                     <li class="nav-item mx-2 mx-xl-4 mt-2">
-                        <a class="nav-link" href="#estudiantes">Estudiantes</a>
+                        <a class="nav-link" href="#tickets">Tickets</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </footer>
-
-    <div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="ticketModalLabel">Comprar Tickets</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <form class="d-flex flex-column" id="ticketForm">
-                    <div class="modal-body pb-0">
-                        <h2 class="fw-semibold text-uppercase text-center mb-3">Valor del ticket general $200</h2>
-                        <div class="row mb-3">
-                            <div class="col-lg-4 mb-3 mb--0">
-                                <div class="card h-100 border-primary">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Estudiantes</h5>
-                                        <p class="card-text">Tienen un descuento de</p>
-                                        <p class="card-text fw-bold">80%</p>
-                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-4 mb-3 mb--0">
-                                <div class="card h-100 border-success">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Trainees</h5>
-                                        <p class="card-text">Tienen un descuento de</p>
-                                        <p class="card-text fw-bold">50%</p>
-                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-4 mb-3 mb--0">
-                                <div class="card h-100 border-warning">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Juniors</h5>
-                                        <p class="card-text">Tienen un descuento de</p>
-                                        <p class="card-text fw-bold">15%</p>
-                                        <p class="card-text"><small class="text-body-secondary">*presentar documentación</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                          
-                        <div class="row">
-                            <div class="col-lg mb-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control val" id="name-ticket" placeholder="Nombre" aria-describedby=" validationName" required>
-                                    <label for="name-ticket">Nombre</label>
-                                    <div id="validationName" class="invalid-feedback">Por favor escriba un nombre válido.</div>
-                                
-                                </div>                             
-                            </div>
-                        
-                            <div class="col-lg mb-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control val" id="surname-ticket" placeholder="Apellido" aria-describedby=" validationSurname" required>
-                                    <label for="surname-ticket">Apellido</label>
-                                    <div id="validationSurname" class="invalid-feedback">Por favor escriba un apellido válido.</div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control val" id="email-ticket" placeholder="Correo Electrónico" aria-describedby=" validationEmail" required>
-                            <label for="email-ticket">Correo Electrónico</label>
-                            <div id="validationEmail" class="invalid-feedback">Por favor escriba una dirección de correo electrónico válida.</div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg mb-3">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control val" id="quantity-ticket" min="1" max="10" required>
-                                    <label for="quantity-ticket">Cantidad</label>
-                                </div>
-                            </div>
-                        
-                            <div class="col-lg mb-3">
-                                <div class="form-floating">
-                                    <select class="form-select" id="category-ticket" required>
-                                        <option value="general">General</option>
-                                        <option value="students">Estudiantes</option>
-                                        <option value="trainees">Trainees</option>
-                                        <option value="juniors">Juniors</option>
-                                    </select>
-                                    <label for="category-ticket">Categoría</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <p class="border rounded border-primary-subtle bg-primary-subtle p-3">Total a Pagar: $<span id="total-ticket">200</span></p>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger" onclick="cleanTicketForm();">Borrar</button>
-                        <button type="submit" id="submitTicket" class="btn btn-success" disabled>Generar Boleta</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script src="./bootstrap.js" crossorigin="anonymous"></script>
     <script src="./main.js" crossorigin="anonymous"></script>
